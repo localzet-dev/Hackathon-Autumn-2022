@@ -1,0 +1,38 @@
+<?php require config('app.base') ?>
+
+<!--begin::Body-->
+
+<body id="kt_body" class="auth-bg <?= session('theme', 'light') . '-mode' ?>">
+    <!--begin::Main-->
+    <!--begin::Root-->
+    <div class="d-flex flex-column flex-root">
+        <!--begin::Authentication - 404 Page-->
+        <div class="d-flex flex-column flex-center flex-column-fluid p-10">
+            <!--begin::Illustration-->
+            <img src="assets/media/illustrations/sigma-1/18.png" alt="" class="mw-100 mb-10 h-lg-450px" />
+            <!--end::Illustration-->
+            <!--begin::Message-->
+            <h1 class="fw-bold mb-10" style="color: #A3A3C7"><?= (is_string($data)) ? $data : print_r($data, true) ?></h1>
+            <!--end::Message-->
+            <!--begin::Link-->
+            <div class="flex">
+                <a href="/auth" class="btn btn-primary">На главную</a>
+                <a href="/auth/logout" class="btn btn-secondary">Выйти</a>
+            </div>
+            <!--end::Link-->
+        </div>
+        <!--end::Authentication - 404 Page-->
+    </div>
+    <!--end::Root-->
+    <!--end::Main-->
+    <!--begin::Javascript-->
+    <script>
+        var hostUrl = "assets/";
+    </script>
+    <!--begin::Global Javascript Bundle(used by all pages)-->
+    <script src="assets/plugins/global/plugins.bundle.js"></script>
+    <script src="assets/js/scripts.bundle.js"></script>
+    <!--end::Global Javascript Bundle-->
+    <!--end::Javascript-->
+</body>
+<!--end::Body-->

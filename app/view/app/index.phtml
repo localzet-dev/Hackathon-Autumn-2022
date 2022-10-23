@@ -1,0 +1,298 @@
+<?php require config('app.base') ?>
+
+<body id="kt_body" style="background-image: url()" class="header-fixed header-tablet-and-mobile-fixed aside-fixed" data-kt-aside-minimize="on">
+	<!--begin::Main-->
+	<!--begin::Root-->
+	<div class="d-flex flex-column flex-root">
+		<!--begin::Page-->
+		<div class="page d-flex flex-row flex-column-fluid">
+			<!--begin::Aside-->
+			<?php require config('app.aside') ?>
+
+			<!--end::Aside-->
+			<!--begin::Wrapper-->
+			<div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
+				<!--begin::Header-->
+				<div id="kt_header" class="header" data-kt-sticky="true" data-kt-sticky-name="header" data-kt-sticky-offset="{default: '200px', lg: '300px'}">
+					<!--begin::Container-->
+					<div class="container-xxl d-flex align-items-center justify-content-between" id="kt_header_container">
+						<!--begin::Page title-->
+						<div class="page-title d-flex flex-column align-items-start justify-content-center flex-wrap mt-n5 mt-lg-0 me-lg-2 pb-2 pb-lg-0" data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', lg: '#kt_header_container'}">
+							<!--begin::Heading-->
+							<h1 class="text-dark fw-bolder my-0 fs-2">Новости</h1>
+							<!--end::Heading-->
+							<!--begin::Breadcrumb-->
+							<ul class="breadcrumb fw-bold fs-base my-1">
+								<li class="breadcrumb-item text-muted">
+									<a href="<?= config('app.domain') ?>/app" class="text-muted">UniSocial</a>
+								</li>
+								<li class="breadcrumb-item text-dark">Главная</li>
+							</ul>
+							<!--end::Breadcrumb-->
+						</div>
+						<!--end::Page title=-->
+					</div>
+					<!--end::Container-->
+				</div>
+				<!--end::Header-->
+				<!--begin::Content-->
+				<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+					<!--begin::Container-->
+					<div class="container-xxl" id="kt_content_container">
+						<!--begin::Row-->
+						<div class="row g-5 g-xl-12" style="justify-content: center;">
+							<!--begin::Col-->
+							<div class="col-xl-6">
+								<?php foreach ($first_posts as $post) { ?>
+									<!--begin::Feeds Widget-->
+									<div class="card mb-5 mb-xl-8">
+										<!--begin::Body-->
+										<div class="card-body pb-0">
+											<!--begin::Header-->
+											<div class="d-flex align-items-center mb-5">
+												<!--begin::User-->
+												<div class="d-flex align-items-center flex-grow-1">
+													<!--begin::Avatar-->
+													<div class="symbol symbol-45px me-5">
+														<img src="<?= $post->user->avatar ?>" alt="" />
+													</div>
+													<!--end::Avatar-->
+													<!--begin::Info-->
+													<div class="d-flex flex-column">
+														<a href="#" class="text-gray-900 text-hover-primary fs-6 fw-bolder"><?= $post->user->firstname . ' ' . $post->user->lastname ?></a>
+														<span class="text-gray-400 fw-bold">
+															<?php
+															if ($post->user->type == 'dev') echo 'Разработчик';
+															if ($post->user->type == 'admin') echo 'Администратор';
+															if ($post->user->type == 'teacher') echo 'Преподаватель';
+															if ($post->user->type == 'student') echo 'Студент';
+															?>
+														</span>
+													</div>
+													<!--end::Info-->
+												</div>
+												<!--end::User-->
+												<!--begin::Menu-->
+												<div class="my-0">
+													<button type="button" class="btn btn-sm btn-icon btn-color-primary btn-active-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
+														<!--begin::Svg Icon | path: icons/duotune/general/gen024.svg-->
+														<span class="svg-icon svg-icon-2">
+															<svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24">
+																<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+																	<rect x="5" y="5" width="5" height="5" rx="1" fill="currentColor" />
+																	<rect x="14" y="5" width="5" height="5" rx="1" fill="currentColor" opacity="0.3" />
+																	<rect x="5" y="14" width="5" height="5" rx="1" fill="currentColor" opacity="0.3" />
+																	<rect x="14" y="14" width="5" height="5" rx="1" fill="currentColor" opacity="0.3" />
+																</g>
+															</svg>
+														</span>
+														<!--end::Svg Icon-->
+													</button>
+													<!--begin::Menu 2-->
+													<div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-bold w-200px" data-kt-menu="true">
+														<!--begin::Menu item-->
+														<div class="menu-item px-3">
+															<div class="menu-content fs-6 text-dark fw-bolder px-3 py-4">Действия</div>
+														</div>
+														<!--end::Menu item-->
+														<!--begin::Menu separator-->
+														<div class="separator mb-3 opacity-75"></div>
+														<!--end::Menu separator-->
+														<!--begin::Menu item-->
+														<div class="menu-item px-3">
+															<a href="#" class="menu-link px-3">Редактировать</a>
+														</div>
+														<!--end::Menu item-->
+														<!--begin::Menu item-->
+														<div class="menu-item px-3">
+															<a href="#" class="menu-link px-3">Удалить</a>
+														</div>
+														<!--end::Menu item-->
+													</div>
+													<!--end::Menu 2-->
+												</div>
+												<!--end::Menu-->
+											</div>
+											<!--end::Header-->
+											<!--begin::Post-->
+											<div class="mb-5">
+												<?php if ($post->image) { ?>
+													<!--begin::Image-->
+													<div class="bgi-no-repeat bgi-size-cover rounded min-h-250px mb-5" style="background-image:url('<?= $post->image ?>');"></div>
+													<!--end::Image-->
+												<?php } ?>
+												<!--begin::Text-->
+												<div class="text-gray-800 mb-5"><?= $post->body ?></div>
+												<!--end::Text-->
+											</div>
+											<!--end::Post-->
+										</div>
+										<!--end::Body-->
+									</div>
+									<!--end::Feeds Widget-->
+								<?php } ?>
+							</div>
+							<div class="col-xl-6">
+								<?php foreach ($second_posts as $post) { ?>
+									<!--begin::Feeds Widget-->
+									<div class="card mb-5 mb-xl-8">
+										<!--begin::Body-->
+										<div class="card-body pb-0">
+											<!--begin::Header-->
+											<div class="d-flex align-items-center mb-5">
+												<!--begin::User-->
+												<div class="d-flex align-items-center flex-grow-1">
+													<!--begin::Avatar-->
+													<div class="symbol symbol-45px me-5">
+														<img src="<?= $post->user->avatar ?>" alt="" />
+													</div>
+													<!--end::Avatar-->
+													<!--begin::Info-->
+													<div class="d-flex flex-column">
+														<a href="#" class="text-gray-900 text-hover-primary fs-6 fw-bolder"><?= $post->user->firstname . ' ' . $post->user->lastname ?></a>
+														<span class="text-gray-400 fw-bold">
+															<?php
+															if ($post->user->type == 'dev') echo 'Разработчик';
+															if ($post->user->type == 'admin') echo 'Администратор';
+															if ($post->user->type == 'teacher') echo 'Преподаватель';
+															if ($post->user->type == 'student') echo 'Студент';
+															?>
+														</span>
+													</div>
+													<!--end::Info-->
+												</div>
+												<!--end::User-->
+												<!--begin::Menu-->
+												<div class="my-0">
+													<button type="button" class="btn btn-sm btn-icon btn-color-primary btn-active-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
+														<!--begin::Svg Icon | path: icons/duotune/general/gen024.svg-->
+														<span class="svg-icon svg-icon-2">
+															<svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24">
+																<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+																	<rect x="5" y="5" width="5" height="5" rx="1" fill="currentColor" />
+																	<rect x="14" y="5" width="5" height="5" rx="1" fill="currentColor" opacity="0.3" />
+																	<rect x="5" y="14" width="5" height="5" rx="1" fill="currentColor" opacity="0.3" />
+																	<rect x="14" y="14" width="5" height="5" rx="1" fill="currentColor" opacity="0.3" />
+																</g>
+															</svg>
+														</span>
+														<!--end::Svg Icon-->
+													</button>
+													<!--begin::Menu 2-->
+													<div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-bold w-200px" data-kt-menu="true">
+														<!--begin::Menu item-->
+														<div class="menu-item px-3">
+															<div class="menu-content fs-6 text-dark fw-bolder px-3 py-4">Действия</div>
+														</div>
+														<!--end::Menu item-->
+														<!--begin::Menu separator-->
+														<div class="separator mb-3 opacity-75"></div>
+														<!--end::Menu separator-->
+														<!--begin::Menu item-->
+														<div class="menu-item px-3">
+															<a href="#" class="menu-link px-3">Редактировать</a>
+														</div>
+														<!--end::Menu item-->
+														<!--begin::Menu item-->
+														<div class="menu-item px-3">
+															<a href="#" class="menu-link px-3">Удалить</a>
+														</div>
+														<!--end::Menu item-->
+													</div>
+													<!--end::Menu 2-->
+												</div>
+												<!--end::Menu-->
+											</div>
+											<!--end::Header-->
+											<!--begin::Post-->
+											<div class="mb-5">
+												<?php if ($post->image) { ?>
+													<!--begin::Image-->
+													<div class="bgi-no-repeat bgi-size-cover rounded min-h-250px mb-5" style="background-image:url('<?= $post->image ?>');"></div>
+													<!--end::Image-->
+												<?php } ?>
+												<!--begin::Text-->
+												<div class="text-gray-800 mb-5"><?= $post->body ?></div>
+												<!--end::Text-->
+											</div>
+											<!--end::Post-->
+										</div>
+										<!--end::Body-->
+									</div>
+									<!--end::Feeds Widget-->
+								<?php } ?>
+							</div>
+
+							<!--end::Col-->
+						</div>
+						<!--end::Row-->
+					</div>
+					<!--end::Container-->
+				</div>
+				<!--end::Content-->
+				<!--begin::Footer-->
+				<div class="footer py-4 d-flex flex-lg-column" id="kt_footer">
+					<!--begin::Container-->
+					<div class="container-xxl d-flex flex-column flex-md-row flex-stack">
+						<!--begin::Copyright-->
+						<div class="text-dark order-2 order-md-1">
+							<span class="text-gray-400 fw-bold me-1">Created by</span>
+							<a href="https://www.rootx.ru" target="_blank" class="text-muted text-hover-primary fw-bold me-2 fs-6 RootXText">NONA Team</a>
+						</div>
+						<!--end::Copyright-->
+						<!--begin::Menu-->
+						<ul class="menu menu-gray-600 menu-hover-primary fw-bold order-1">
+							<li class="menu-item">
+								<a href="https://www.rootx.ru" target="_blank" class="menu-link px-2">О нас</a>
+							</li>
+							<li class="menu-item">
+								<a href="https://vk.me/localzet.projects" target="_blank" class="menu-link px-2">Поддержка</a>
+							</li>
+							<li class="menu-item">
+								<a href="https://github.com/rootx-group" target="_blank" class="menu-link px-2">GitHub</a>
+							</li>
+						</ul>
+						<!--end::Menu-->
+					</div>
+					<!--end::Container-->
+				</div>
+				<!--end::Footer-->
+			</div>
+			<!--end::Wrapper-->
+		</div>
+		<!--end::Page-->
+	</div>
+	<!--end::Root-->
+	<!--begin::Scrolltop-->
+	<div id="kt_scrolltop" class="scrolltop" data-kt-scrolltop="true">
+		<!--begin::Svg Icon | path: icons/duotune/arrows/arr066.svg-->
+		<span class="svg-icon">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+				<rect opacity="0.5" x="13" y="6" width="13" height="2" rx="1" transform="rotate(90 13 6)" fill="currentColor" />
+				<path d="M12.5657 8.56569L16.75 12.75C17.1642 13.1642 17.8358 13.1642 18.25 12.75C18.6642 12.3358 18.6642 11.6642 18.25 11.25L12.7071 5.70711C12.3166 5.31658 11.6834 5.31658 11.2929 5.70711L5.75 11.25C5.33579 11.6642 5.33579 12.3358 5.75 12.75C6.16421 13.1642 6.83579 13.1642 7.25 12.75L11.4343 8.56569C11.7467 8.25327 12.2533 8.25327 12.5657 8.56569Z" fill="currentColor" />
+			</svg>
+		</span>
+		<!--end::Svg Icon-->
+	</div>
+	<!--end::Scrolltop-->
+	<!--begin::Javascript-->
+	<script>
+		var hostUrl = "<?= config('app.assets') ?>/";
+	</script>
+	<!--begin::Global Javascript Bundle(used by all pages)-->
+	<script src="<?= config('app.assets') ?>/plugins/global/plugins.bundle.js"></script>
+	<script src="<?= config('app.assets') ?>/js/scripts.bundle.js"></script>
+	<!--end::Global Javascript Bundle-->
+	<!--begin::Page Vendors Javascript(used by this page)-->
+	<script src="<?= config('app.assets') ?>/plugins/custom/datatables/datatables.bundle.js"></script>
+	<!--end::Page Vendors Javascript-->
+	<!--begin::Page Custom Javascript(used by this page)-->
+	<script src="<?= config('app.assets') ?>/js/widgets.bundle.js"></script>
+	<script src="<?= config('app.assets') ?>/js/custom/widgets.js"></script>
+	<script src="<?= config('app.assets') ?>/js/custom/apps/chat/chat.js"></script>
+	<script src="<?= config('app.assets') ?>/js/custom/utilities/modals/upgrade-plan.js"></script>
+	<script src="<?= config('app.assets') ?>/js/custom/utilities/modals/create-app.js"></script>
+	<script src="<?= config('app.assets') ?>/js/custom/utilities/modals/users-search.js"></script>
+	<!--end::Page Custom Javascript-->
+	<!--end::Javascript-->
+</body>

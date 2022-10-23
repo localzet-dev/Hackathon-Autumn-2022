@@ -1,0 +1,104 @@
+<?php if (empty($page)) $page = 404 ?>
+<!DOCTYPE html>
+
+<html lang="ru" prefix="og: http://ogp.me/ns#">
+
+<head>
+  <base href="" />
+
+  <title><?= $title ?? config('app.name', '') ?></title>
+
+  <!-- SEO -->
+  <meta charset="utf-8" />
+  <meta name="language" content="RU" />
+  <meta name="robots" content="index,follow" />
+  <meta name="title" content="<?= $title ?? config('app.name', '') ?>" />
+  <meta name="description" content="<?= $description ?? config('app.description', '') ?>" />
+  <meta name="keywords" content="<?= $keywords ?? config('app.keywords', '') ?>" />
+  <meta name="viewport" content="<?= $viewport ?? config('app.viewport', '') ?>" />
+
+  <!-- About Creator App -->
+  <meta name="owner" content="<?= config('app.owner', 'localzet') ?>" />
+  <meta name="designer" content="<?= config('app.designer', 'localzet') ?>" />
+  <meta name="author" content="<?= config('app.author', 'localzet, creator@localzet.ru') ?>" />
+  <meta name="copyright" content="<?= config('app.copyright', 'Zorin Projects') ?>" />
+  <meta name="reply-to" content="<?= config('app.email', 'creator@localzet.ru') ?>" />
+
+  <!-- About Server -->
+  <meta name="generator" content="FrameX (FX) Engine" />
+  <meta name="FrameX" version="<?= config('app.version', '!notSET!') ?>" debug="<?= config('app.debug', '!notSET!') ?>" />
+  <meta name="RootX" domain="<?= config('app.domain', '!notSET!') ?>" fonts="<?= config('app.fonts', '!notSET!') ?>" assets="<?= config('app.assets', '!notSET!') ?>" />
+
+  <meta http-equiv="Expires" content="60" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Cache-Control" content="no-cache" />
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+  <!-- OpenGraph -->
+  <meta property="og:title" content="<?= $title ?? config('app.name', '') ?>" />
+  <meta property="og:description" content="<?= $description ?? config('app.keywords', '') ?>" />
+  <meta property="og:locale" content="ru_RU" />
+  <meta property="og:type" content="<?= $og['type'] ?? 'website' ?>" />
+  <meta property="og:url" content="<?= $canonical ?? config('app.domain', '') ?>" />
+  <meta property="og:site_name" content="<?= config('app.name') ?>" />
+
+  <meta property="og:image" content="<?= config('app.assets') ?>/media/logos/RootX.svg" />
+  <meta property="og:image:url" content="<?= config('app.assets') ?>/media/logos/RootX.svg" />
+  <meta property="og:image:secure_url" content="<?= config('app.assets') ?>/media/logos/RootX.svg" />
+  <meta property="og:image:type" content="image/svg+xml" />
+  <meta property="og:image:width" content="1920" />
+  <meta property="og:image:height" content="1080" />
+
+  <meta name="og:email" content="creator@localzet.ru" />
+  <meta name="og:country-name" content="Russian Federation" />
+
+  <!-- Apple Meta Tags -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-touch-fullscreen" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="format-detection" content="telephone=no" />
+
+  <!-- SEO 2 -->
+  <link rel="canonical" href="<?= $canonical ?? config('app.domain', '') ?>" />
+  <link rel="icon" type="image/svg+xml" href="<?= config('app.logo') ?>" />
+  <link rel="shortcut icon" type="image/svg+xml" href="<?= config('app.logo') ?>" />
+
+  <!-- Fonts -->
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Nunito:300,400,500,600,700" />
+  <link rel="stylesheet" type="text/css" href="<?= config('app.fonts') ?>/fontawesome/v6.1/css/all.css" />
+
+  <!-- Plugins Styles -->
+  <link rel="stylesheet" type="text/css" href="<?= config('app.assets') ?>/plugins/custom/fullcalendar/fullcalendar.bundle.css" />
+  <link rel="stylesheet" type="text/css" href="<?= config('app.assets') ?>/plugins/custom/datatables/datatables.bundle.css" />
+  <!-- <link rel="stylesheet" type="text/css" href="<?= config('app.assets') ?>/plugins/custom/leaflet/leaflet.bundle.css" />
+  <link rel="stylesheet" type="text/css" href="<?= config('app.assets') ?>/plugins/custom/prismjs/prismjs.bundle.css" />
+  <link rel="stylesheet" type="text/css" href="<?= config('app.assets') ?>/plugins/custom/vis-timeline/vis-timeline.bundle.css" />
+  <link rel="stylesheet" type="text/css" href="<?= config('app.assets') ?>/plugins/custom/cookiealert/cookiealert.bundle.css" />
+  <link rel="stylesheet" type="text/css" href="<?= config('app.assets') ?>/plugins/custom/cropper/cropper.bundle.css" />
+  <link rel="stylesheet" type="text/css" href="<?= config('app.assets') ?>/plugins/custom/jkanban/jkanban.bundle.css" />
+  <link rel="stylesheet" type="text/css" href="<?= config('app.assets') ?>/plugins/custom/jstree/jstree.bundle.css" /> -->
+
+  <!-- App Styles -->
+  <?php if (
+    request()->cookie('theme', 'light') == 'dark' || ($page && (config('app.default_mode', 'light') == 'dark' || in_array($page, config('app.dark_pages'))))
+  ) { ?>
+    <link rel="stylesheet" type="text/css" href="<?= config('app.assets') ?>/plugins/global/plugins.dark.bundle.css" />
+    <link rel="stylesheet" type="text/css" href="<?= config('app.assets') ?>/css/style.dark.bundle.css" />
+  <?php } else { ?>
+    <!-- <link rel="stylesheet" type="text/css" href="<?= config('app.assets') ?>/plugins/global/plugins.bundle.css" />
+    <link rel="stylesheet" type="text/css" href="<?= config('app.assets') ?>/css/style.bundle.css" /> -->
+    <link rel="stylesheet" type="text/css" href="<?= config('app.assets') ?>/plugins/global/plugins.dark.bundle.css" />
+    <link rel="stylesheet" type="text/css" href="<?= config('app.assets') ?>/css/style.dark.bundle.css" />
+
+  <?php } ?>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" type="text/css" href="<?= config('app.assets') ?>/css/custom.css" />
+  <?php if (!empty($page) && file_exists(public_path() . "/assets/css/$page.css")) { ?>
+    <link rel="stylesheet" type="text/css" href="/assets/css/<?= $page ?>.css" />
+  <?php } ?>
+
+  <!-- Custom JS -->
+  <script src="https://unpkg.com/cookielib/src/cookie.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+</head>

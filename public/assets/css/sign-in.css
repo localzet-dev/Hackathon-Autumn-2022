@@ -1,0 +1,90 @@
+body {
+    justify-content: space-around;
+}
+
+/* Контейнер */
+.container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    padding: 0 20px !important;
+    height: 100% !important;
+}
+
+.content {
+    display: flex !important;
+    flex-direction: column !important;
+    max-width: 400px !important;
+    width: 100% !important;
+    min-height: 100% !important;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    padding: 0 20px !important;
+    height: 100% !important;
+}
+
+.content {
+    display: flex !important;
+    flex-direction: column !important;
+    max-width: 400px !important;
+    width: 100% !important;
+    min-height: 100% !important;
+    justify-content: center;
+    align-items: center;
+}
+
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    width: 100%;
+}
+
+.formContainer h2,
+.formContainer h4 {
+    margin-top: 0;
+}
+
+.formContainer h4 {
+    font-weight: normal;
+    font-size: 18px;
+    margin-bottom: 0;
+}
+
+.formContainer form {
+    width: 100%;
+    margin-top: 32px;
+}
+
+.formContainer button {
+    height: 48px;
+    width: 100%;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.authLinks {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.authLinks {
+    margin-bottom: 100px;
+    font-size: 15px;
+}
+
+.authLinks a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: normal;
+}

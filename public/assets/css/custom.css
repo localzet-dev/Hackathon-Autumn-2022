@@ -1,0 +1,34 @@
+.logo {
+    max-width: 100px;
+    margin: 20px 0;
+    height: auto;
+}
+
+.RootXTheme {
+    /* background: linear-gradient(to right, rgb(166 92 225) 0%, rgb(4 200 200) 100%); */
+    background: linear-gradient(to right, #0059ff 0%, #8f63d3 100%);
+}
+
+.RootXText {
+    /* background: linear-gradient(to right, rgb(166 92 225) 0%, rgb(4 200 200) 100%); */
+    background: linear-gradient(to right, #0059ff 0%, #8f63d3 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.RootXTextStart {
+    /* background: rgb(166 92 225); */
+    background: red;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.RootXTextEnd {
+    background: orange;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.leave-russia-now-and-apply-your-skills-to-the-world {
+    display: none;
+}

@@ -1,0 +1,337 @@
+<?php require config('app.base') ?>
+
+<body id="kt_body" data-bs-spy="scroll" data-bs-target="#kt_landing_menu" data-bs-offset="200" class="bg-white position-relative <?= session('theme', 'light') . '-mode' ?>">
+	<!--begin::Main-->
+	<!--begin::Root-->
+	<div class="d-flex flex-column flex-root">
+		<!--begin::Header Section-->
+		<div class="mb-0" id="home">
+			<!--begin::Wrapper-->
+			<div class="bgi-no-repeat bgi-size-contain bgi-position-x-center bgi-position-y-bottom landing-dark-bg" style="background-image: url(/assets/media/svg/illustrations/landing.svg)">
+				<!--begin::Header-->
+				<div class="landing-header" data-kt-sticky="true" data-kt-sticky-name="landing-header" data-kt-sticky-offset="{default: '200px', lg: '300px'}">
+					<!--begin::Container-->
+					<div class="container">
+						<!--begin::Wrapper-->
+						<div class="d-flex align-items-center justify-content-between">
+							<!--begin::Logo-->
+							<div class="d-flex align-items-center flex-equal">
+								<!--begin::Mobile menu toggle-->
+								<button class="btn btn-icon btn-active-color-primary me-3 d-flex d-lg-none" id="kt_landing_menu_toggle">
+									<!--begin::Svg Icon | path: icons/duotune/abstract/abs015.svg-->
+									<span class="svg-icon svg-icon-2hx">
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+											<path d="M21 7H3C2.4 7 2 6.6 2 6V4C2 3.4 2.4 3 3 3H21C21.6 3 22 3.4 22 4V6C22 6.6 21.6 7 21 7Z" fill="currentColor" />
+											<path opacity="0.3" d="M21 14H3C2.4 14 2 13.6 2 13V11C2 10.4 2.4 10 3 10H21C21.6 10 22 10.4 22 11V13C22 13.6 21.6 14 21 14ZM22 20V18C22 17.4 21.6 17 21 17H3C2.4 17 2 17.4 2 18V20C2 20.6 2.4 21 3 21H21C21.6 21 22 20.6 22 20Z" fill="currentColor" />
+										</svg>
+									</span>
+									<!--end::Svg Icon-->
+								</button>
+								<!--end::Mobile menu toggle-->
+								<!--begin::Logo image-->
+								<a href="<?= config('app.domain') ?>/">
+									<span class="logo-default h-55px py-3 px-4 px-xxl-6 flex" style="background: linear-gradient(to right, rgb(166 92 225) 0%, rgb(4 200 200) 100%);-webkit-background-clip: text;-webkit-text-fill-color: transparent;">
+										<img alt="Logo" src="<?= config('app.logo') ?>" class="h-25px h-lg-30px px-4" />
+										<span class="h-25px " style="overflow: hidden;"><?= config('app.name') ?></span>
+									</span>
+
+									<span class="logo-sticky h-55px py-3 px-4 px-xxl-6 flex" style="background: linear-gradient(to right, rgb(166 92 225) 0%, rgb(4 200 200) 100%);-webkit-background-clip: text;-webkit-text-fill-color: transparent;">
+										<img alt="Logo" src="<?= config('app.logo') ?>" class="h-25px h-lg-30px px-4" />
+										<span class="h-25px " style="overflow: hidden;"><?= config('app.name') ?></span>
+									</span>
+								</a>
+								<!--end::Logo image-->
+							</div>
+							<!--end::Logo-->
+							<!--begin::Menu wrapper-->
+							<div class="d-lg-block" id="kt_header_nav_wrapper">
+								<div class="d-lg-block p-5 p-lg-0" data-kt-drawer="true" data-kt-drawer-name="landing-menu" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="200px" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_landing_menu_toggle" data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_body', lg: '#kt_header_nav_wrapper'}">
+									<!--begin::Menu-->
+									<div class="menu menu-column flex-nowrap menu-rounded menu-lg-row menu-title-gray-500 menu-state-title-primary nav nav-flush fs-5 fw-bold" id="kt_landing_menu">
+										<!--begin::Menu item-->
+										<div class="menu-item">
+											<!--begin::Menu link-->
+											<!-- <a class="menu-link nav-link active py-3 px-4 px-xxl-6" href="#kt_body" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Home</a> -->
+											<!--end::Menu link-->
+										</div>
+										<!--end::Menu item-->
+										<!--begin::Menu item-->
+										<div class="menu-item">
+											<!--begin::Menu link-->
+											<!-- <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#how-it-works" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">How it Works</a> -->
+											<a class="menu-link nav-link py-3 px-4 px-xxl-6" href="https://github.com/localzet" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">localzet</a>
+											<!--end::Menu link-->
+										</div>
+										<!--end::Menu item-->
+										<!--begin::Menu item-->
+										<div class="menu-item">
+											<!--begin::Menu link-->
+											<!-- <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#achievements" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Achievements</a> -->
+											<a class="menu-link nav-link py-3 px-4 px-xxl-6" href="https://github.com/localzet-projects" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Zorin Projects</a>
+											<!--end::Menu link-->
+										</div>
+										<!--end::Menu item-->
+										<!--begin::Menu item-->
+										<div class="menu-item">
+											<!--begin::Menu link-->
+											<!-- <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#team" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Team</a> -->
+											<a class="menu-link nav-link py-3 px-4 px-xxl-6" href="https://github.com/FrameX-System" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">FrameX System</a>
+											<!--end::Menu link-->
+										</div>
+										<!--end::Menu item-->
+										<!--begin::Menu item-->
+										<div class="menu-item">
+											<!--begin::Menu link-->
+											<!-- <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#portfolio" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Portfolio</a> -->
+											<a class="menu-link nav-link py-3 px-4 px-xxl-6" href="https://github.com/nona-team" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">NONA Team</a>
+											<!--end::Menu link-->
+										</div>
+										<!--end::Menu item-->
+										<!--begin::Menu item-->
+										<div class="menu-item">
+											<!--begin::Menu link-->
+											<!-- <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#pricing" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Pricing</a> -->
+											<!--end::Menu link-->
+										</div>
+										<!--end::Menu item-->
+									</div>
+									<!--end::Menu-->
+								</div>
+							</div>
+							<!--end::Menu wrapper-->
+							<!--begin::Toolbar-->
+							<div class="flex-equal text-end ms-1">
+								<a href="<?= config('app.domain') ?>/auth" class="btn btn-success">Войти</a>
+							</div>
+							<!--end::Toolbar-->
+						</div>
+						<!--end::Wrapper-->
+					</div>
+					<!--end::Container-->
+				</div>
+				<!--end::Header-->
+				<!--begin::Landing hero-->
+				<div class="d-flex flex-column flex-center w-100 min-h-350px min-h-lg-500px px-9">
+					<!--begin::Heading-->
+					<div class="text-center mb-5 mb-lg-10 py-10 py-lg-20">
+						<!--begin::Title-->
+						<h1 class="text-white lh-base fw-bolder fs-2x fs-lg-3x mb-15">
+							<span style="background: linear-gradient(to right, rgb(166 92 225) 0%, rgb(4 200 200) 100%);-webkit-background-clip: text;-webkit-text-fill-color: transparent;">
+								<span id="kt_landing_hero_text"><?= config('app.name') ?></span>
+							</span>
+							<br />
+							Платформата организаций
+
+						</h1>
+						<!--end::Title-->
+						<!--begin::Action-->
+						<!-- <a href="<?= config('app.domain') ?>/app" class="btn btn-primary">Панель управления</a> -->
+						<!--end::Action-->
+					</div>
+					<!--end::Heading-->
+				</div>
+				<!--end::Landing hero-->
+			</div>
+			<!--end::Wrapper-->
+			<!--begin::Curve bottom-->
+			<!-- <div class="landing-curve landing-dark-color mb-10 mb-lg-20">
+					<svg viewBox="15 12 1470 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M0 11C3.93573 11.3356 7.85984 11.6689 11.7725 12H1488.16C1492.1 11.6689 1496.04 11.3356 1500 11V12H1488.16C913.668 60.3476 586.282 60.6117 11.7725 12H0V11Z" fill="currentColor"></path>
+					</svg>
+				</div> -->
+			<!--end::Curve bottom-->
+		</div>
+		<!--end::Header Section-->
+		<!--begin::Footer Section-->
+		<div class="mb-0">
+			<!--begin::Curve top-->
+			<!-- <div class="landing-curve landing-dark-color">
+					<svg viewBox="15 -1 1470 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M1 48C4.93573 47.6644 8.85984 47.3311 12.7725 47H1489.16C1493.1 47.3311 1497.04 47.6644 1501 48V47H1489.16C914.668 -1.34764 587.282 -1.61174 12.7725 47H1V48Z" fill="currentColor"></path>
+					</svg>
+				</div> -->
+			<!--end::Curve top-->
+			<!--begin::Wrapper-->
+			<div class="landing-dark-bg pt-20">
+				<!--begin::Container-->
+				<div class="container">
+					<!--begin::Row-->
+					<div class="row py-10 py-lg-20">
+						<!--begin::Col-->
+						<div class="col-lg-6 pe-lg-16 mb-10 mb-lg-0">
+							<!--begin::Block-->
+							<div class="rounded landing-dark-border p-9 mb-10">
+								<!--begin::Title-->
+								<h2 class="text-white">Есть вопросы?</h2>
+								<!--end::Title-->
+								<!--begin::Text-->
+								<span class="fw-normal fs-4 text-gray-700">Напишите нам на
+									<a href="https://vk.me/localzet.projects" class="text-white opacity-50 text-hover-primary">support@rootx.ru</a></span>
+								<!--end::Text-->
+							</div>
+							<!--end::Block-->
+							<!--begin::Block-->
+							<div class="rounded landing-dark-border p-9">
+								<!--begin::Title-->
+								<h2 class="text-white">Наши страницы ВКонтакте</h2>
+								<!--end::Title-->
+								<!--begin::Text-->
+								<span class="fw-normal fs-4 text-gray-700">
+									<a href="https://vk.ru/localzet.projects" class="text-white opacity-50 text-hover-primary">RootX Group</a>,
+									<a href="https://vk.ru/nona_team" class="text-white opacity-50 text-hover-primary">NONA Team</a>
+								</span>
+								<!--end::Text-->
+							</div>
+							<!--end::Block-->
+						</div>
+						<!--end::Col-->
+						<!--begin::Col-->
+						<div class="col-lg-6 ps-lg-16">
+							<!--begin::Navs-->
+							<div class="d-flex justify-content-center">
+								<!--begin::Links-->
+								<div class="d-flex fw-bold flex-column me-20">
+									<!--begin::Subtitle-->
+									<h4 class="fw-bolder text-gray-400 mb-6">Наши продукты</h4>
+									<!--end::Subtitle-->
+									<!--begin::Link-->
+									<a href="https://github.com/localzet/Core" class="text-white opacity-50 text-hover-primary fs-5 mb-6">WebCore Server</a>
+									<!--end::Link-->
+									<!--begin::Link-->
+									<a href="https://github.com/localzet/FrameX" class="text-white opacity-50 text-hover-primary fs-5 mb-6">FrameX (FX) Engine</a>
+									<!--end::Link-->
+									<!--begin::Link-->
+									<a href="https://github.com/localzet/WebKit" class="text-white opacity-50 text-hover-primary fs-5 mb-6">Web Development Kit</a>
+									<!--end::Link-->
+									<!--begin::Link-->
+									<a href="https://github.com/localzet-projects/HTTP-Client" class="text-white opacity-50 text-hover-primary fs-5 mb-6">HTTP Client</a>
+									<!--end::Link-->
+									<!--begin::Link-->
+									<a href="https://github.com/localzet-projects/SocketIO" class="text-white opacity-50 text-hover-primary fs-5 mb-6">SocketIO</a>
+									<!--end::Link-->
+									<!--begin::Link-->
+									<a href="https://github.com/localzet-projects/OAuth" class="text-white opacity-50 text-hover-primary fs-5">OAuth Library</a>
+									<!--end::Link-->
+								</div>
+								<!--end::Links-->
+								<!--begin::Links-->
+								<div class="d-flex fw-bold flex-column ms-lg-20">
+									<!--begin::Subtitle-->
+									<h4 class="fw-bolder text-gray-400 mb-6">Исходный код</h4>
+									<!--end::Subtitle-->
+									<!--begin::Link-->
+									<a href="https://github.com/localzet" class="mb-6">
+										<img src="https://avatars.githubusercontent.com/u/33757217?v=4" class="h-20px me-2" alt="" style="border-radius: 50%;" />
+										<span class="text-white opacity-50 text-hover-primary fs-5 mb-6">localzet</span>
+									</a>
+									<!--end::Link-->
+									<!--begin::Link-->
+									<a href="https://github.com/localzet-projects" class="mb-6">
+										<img src="https://avatars.githubusercontent.com/u/110167423?s=200&v=4" class="h-20px me-2" alt="" style="border-radius: 6px;" />
+										<span class="text-white opacity-50 text-hover-primary fs-5 mb-6">Zorin Projects</span>
+									</a>
+									<!--end::Link-->
+									<!--begin::Link-->
+									<a href="https://github.com/FrameX-System" class="mb-6">
+										<img src="https://avatars.githubusercontent.com/u/108478903?s=200&v=4" class="h-20px me-2" alt="" style="border-radius: 6px;" />
+										<span class="text-white opacity-50 text-hover-primary fs-5 mb-6">FrameX Plugins</span>
+									</a>
+									<!--end::Link-->
+									<!--begin::Link-->
+									<a href="https://github.com/nona-team" class="mb-6">
+										<img src="https://avatars.githubusercontent.com/u/63582571?s=200&v=4" class="h-20px me-2" alt="" style="border-radius: 6px;" />
+										<span class="text-white opacity-50 text-hover-primary fs-5 mb-6">NONA Team</span>
+									</a>
+									<!--end::Link-->
+									<!--begin::Link-->
+									<a href="https://github.com/DSTU-T-University" class="mb-6">
+										<img src="https://avatars.githubusercontent.com/u/112123554?s=200&v=4" class="h-20px me-2" alt="" style="border-radius: 6px;" />
+										<span class="text-white opacity-50 text-hover-primary fs-5 mb-6">T-University</span>
+									</a>
+									<!--end::Link-->
+								</div>
+								<!--end::Links-->
+							</div>
+							<!--end::Navs-->
+						</div>
+						<!--end::Col-->
+					</div>
+					<!--end::Row-->
+				</div>
+				<!--end::Container-->
+				<!--begin::Separator-->
+				<div class="landing-dark-separator"></div>
+				<!--end::Separator-->
+				<!--begin::Container-->
+				<div class="container">
+					<!--begin::Wrapper-->
+					<div class="d-flex flex-column flex-md-row flex-stack py-7 py-lg-10">
+						<!--begin::Copyright-->
+						<div class="d-flex align-items-center order-2 order-md-1">
+							<!--begin::Logo-->
+							<a href="<?= config('app.domain') ?>/">
+								<!-- <img alt="Logo" src="<?= config('app.assets') ?>/media/logos/logo-landing.svg" class="h-15px h-md-20px" /> -->
+								<span class="h-15px h-md-20px" style="display: flex!important;align-items: center;font-size: 1.2rem !important;background: linear-gradient(to right, rgb(166 92 225) 0%, rgb(4 200 200) 100%);-webkit-background-clip: text;-webkit-text-fill-color: transparent;">
+									<span>RootX Group</span>
+								</span>
+							</a>
+							<!--end::Logo image-->
+							<!--begin::Logo image-->
+							<a class="mx-2 fs-6 fw-bold text-gray-600 pt-1" href="https://vk.ru/nona_team">© 2022 NONA Team</a>
+							<!--end::Logo image-->
+						</div>
+						<!--end::Copyright-->
+						<!--begin::Menu-->
+						<ul class="menu menu-gray-600 menu-hover-primary fw-bold fs-6 fs-md-5 order-1 mb-5 mb-md-0">
+							<li class="menu-item">
+								<a href="https://vk.ru/localzet.projects" target="_blank" class="menu-link px-2">О нас</a>
+							</li>
+							<li class="menu-item mx-5">
+								<a href="https://vk.me/localzet.projects" target="_blank" class="menu-link px-2">Поддержка</a>
+							</li>
+							<!-- <li class="menu-item">
+								<a href="" target="_blank" class="menu-link px-2">Purchase</a>
+							</li> -->
+						</ul>
+						<!--end::Menu-->
+					</div>
+					<!--end::Wrapper-->
+				</div>
+				<!--end::Container-->
+			</div>
+			<!--end::Wrapper-->
+		</div>
+		<!--end::Footer Section-->
+		<!--begin::Scrolltop-->
+		<div id="kt_scrolltop" class="scrolltop" data-kt-scrolltop="true">
+			<!--begin::Svg Icon | path: icons/duotune/arrows/arr066.svg-->
+			<span class="svg-icon">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+					<rect opacity="0.5" x="13" y="6" width="13" height="2" rx="1" transform="rotate(90 13 6)" fill="currentColor" />
+					<path d="M12.5657 8.56569L16.75 12.75C17.1642 13.1642 17.8358 13.1642 18.25 12.75C18.6642 12.3358 18.6642 11.6642 18.25 11.25L12.7071 5.70711C12.3166 5.31658 11.6834 5.31658 11.2929 5.70711L5.75 11.25C5.33579 11.6642 5.33579 12.3358 5.75 12.75C6.16421 13.1642 6.83579 13.1642 7.25 12.75L11.4343 8.56569C11.7467 8.25327 12.2533 8.25327 12.5657 8.56569Z" fill="currentColor" />
+				</svg>
+			</span>
+			<!--end::Svg Icon-->
+		</div>
+		<!--end::Scrolltop-->
+	</div>
+	<!--end::Root-->
+	<!--end::Main-->
+	<!--begin::Javascript-->
+	<script>
+		var hostUrl = "<?= config('app.assets') ?>/";
+	</script>
+	<!--begin::Global Javascript Bundle(used by all pages)-->
+	<script src="<?= config('app.assets') ?>/plugins/global/plugins.bundle.js"></script>
+	<script src="<?= config('app.assets') ?>/js/scripts.bundle.js"></script>
+	<!--end::Global Javascript Bundle-->
+	<!--begin::Page Vendors Javascript(used by this page)-->
+	<script src="<?= config('app.assets') ?>/plugins/custom/fslightbox/fslightbox.bundle.js"></script>
+	<script src="<?= config('app.assets') ?>/plugins/custom/typedjs/typedjs.bundle.js"></script>
+	<!--end::Page Vendors Javascript-->
+	<!--begin::Page Custom Javascript(used by this page)-->
+	<script src="<?= config('app.assets') ?>/js/custom/landing.js"></script>
+	<script src="<?= config('app.assets') ?>/js/custom/pages/pricing/general.js"></script>
+	<!--end::Page Custom Javascript-->
+	<!--end::Javascript-->
+</body>

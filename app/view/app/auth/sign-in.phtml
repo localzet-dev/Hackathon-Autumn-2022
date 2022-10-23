@@ -1,0 +1,114 @@
+<?php require config('app.base') ?>
+
+<body id="kt_body" class=" mat-typography dark-mode">
+	<!--begin::Main-->
+	<!--begin::Root-->
+	<div id="root">
+		<!--begin::Authentication - Sign-in -->
+		<div class="container">
+			<!--begin::Content-->
+			<div class="content">
+				<!--begin::Wrapper-->
+				<div class="formContainer">
+					<!-- <img alt="RootX Group" src="/assets/media/logos/RootX.svg" class="logo" /> -->
+
+					<img style="width:35%; margin-bottom:15px" src="<?= config('app.logo') ?>">
+					<h2 class="RootXText"><b><?= config('app.name') ?></b></h2>
+
+					<form class="form w-100" novalidate="novalidate" id="kt_sign_in_form" data-rx-cert-url="<?= config('app.domain') ?>/auth/token" action="#">
+					<div class="alert alert-danger d-flex align-items-center p-5 mb-10">
+								<!--begin::Svg Icon | path: icons/duotune/general/gen048.svg-->
+								<span class="svg-icon svg-icon-2hx svg-icon-danger me-4">
+			<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path opacity="0.3" d="M20.5543 4.37824L12.1798 2.02473C12.0626 1.99176 11.9376 1.99176 11.8203 2.02473L3.44572 4.37824C3.18118 4.45258 3 4.6807 3 4.93945V13.569C3 14.6914 3.48509 15.8404 4.4417 16.984C5.17231 17.8575 6.18314 18.7345 7.446 19.5909C9.56752 21.0295 11.6566 21.912 11.7445 21.9488C11.8258 21.9829 11.9129 22 12.0001 22C12.0872 22 12.1744 21.983 12.2557 21.9488C12.3435 21.912 14.4326 21.0295 16.5541 19.5909C17.8169 18.7345 18.8277 17.8575 19.5584 16.984C20.515 15.8404 21 14.6914 21 13.569V4.93945C21 4.6807 20.8189 4.45258 20.5543 4.37824Z" fill="currentColor"></path>
+				<path d="M10.5606 11.3042L9.57283 10.3018C9.28174 10.0065 8.80522 10.0065 8.51412 10.3018C8.22897 10.5912 8.22897 11.0559 8.51412 11.3452L10.4182 13.2773C10.8099 13.6747 11.451 13.6747 11.8427 13.2773L15.4859 9.58051C15.771 9.29117 15.771 8.82648 15.4859 8.53714C15.1948 8.24176 14.7183 8.24176 14.4272 8.53714L11.7002 11.3042C11.3869 11.6221 10.874 11.6221 10.5606 11.3042Z" fill="currentColor"></path>
+			</svg>
+		</span>
+								<!--end::Svg Icon-->
+								<div class="d-flex flex-column">
+									<h4 class="mb-1 text-danger">Учётные записи</h4>
+									<span><b>Админ:</b> admin@rootx.ru | admin</span>
+									<span><b>Преподаватель:</b> teacher@rootx.ru | teacher</span>
+									<span><b>Студент:</b> student@rootx.ru | student</span>
+								</div>
+							</div>
+
+						<?php if (!empty($auth_error)) { ?>
+							<div class="alert alert-danger d-flex align-items-center p-5 mb-10">
+								<!--begin::Svg Icon | path: icons/duotune/general/gen048.svg-->
+								<!-- <span class="svg-icon svg-icon-2hx svg-icon-danger me-4">
+			<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path opacity="0.3" d="M20.5543 4.37824L12.1798 2.02473C12.0626 1.99176 11.9376 1.99176 11.8203 2.02473L3.44572 4.37824C3.18118 4.45258 3 4.6807 3 4.93945V13.569C3 14.6914 3.48509 15.8404 4.4417 16.984C5.17231 17.8575 6.18314 18.7345 7.446 19.5909C9.56752 21.0295 11.6566 21.912 11.7445 21.9488C11.8258 21.9829 11.9129 22 12.0001 22C12.0872 22 12.1744 21.983 12.2557 21.9488C12.3435 21.912 14.4326 21.0295 16.5541 19.5909C17.8169 18.7345 18.8277 17.8575 19.5584 16.984C20.515 15.8404 21 14.6914 21 13.569V4.93945C21 4.6807 20.8189 4.45258 20.5543 4.37824Z" fill="currentColor"></path>
+				<path d="M10.5606 11.3042L9.57283 10.3018C9.28174 10.0065 8.80522 10.0065 8.51412 10.3018C8.22897 10.5912 8.22897 11.0559 8.51412 11.3452L10.4182 13.2773C10.8099 13.6747 11.451 13.6747 11.8427 13.2773L15.4859 9.58051C15.771 9.29117 15.771 8.82648 15.4859 8.53714C15.1948 8.24176 14.7183 8.24176 14.4272 8.53714L11.7002 11.3042C11.3869 11.6221 10.874 11.6221 10.5606 11.3042Z" fill="currentColor"></path>
+			</svg>
+		</span> -->
+								<!--end::Svg Icon-->
+								<div class="d-flex flex-column">
+									<h4 class="mb-1 text-danger"><?= $auth_error ?></h4>
+									<!-- <span>The alert component can be used to highlight certain parts of your page for higher content visibility.</span> -->
+								</div>
+							</div>
+						<?php } ?>
+
+						<div class="fv-row mb-10">
+							<label class="form-label fs-6 fw-bolder text-dark">E-mail</label>
+							<!-- <span class="fs-7 RootXText" style="margin-left: 5px;">gs.donstu.ru</span> -->
+							<input class="form-control form-control-lg form-control-solid" type="text" name="email" autocomplete="off" />
+						</div>
+
+						<div class="fv-row mb-10">
+							<div class="d-flex justify-content-between mt-n5">
+								<div class="d-flex flex-stack mb-2">
+									<label class="form-label fw-bolder text-dark fs-6 mb-0">Пароль</label>
+									<a href="<?= config('app.domain') ?>/auth/forgot" class="link-primary fs-7 fw-bolder RootXText" id="kt_login_forgot" style="margin-left: 5px;">Забыли?</a>
+								</div>
+							</div>
+
+							<input class="form-control form-control-lg form-control-solid" type="password" name="password" autocomplete="off" />
+						</div>
+
+						<div class="text-center" style="display: flex;gap: 10px;">
+							<button type="submit" id="kt_sign_in_submit" class="btn btn-lg btn-primary w-100 mb-5 RootXTheme">
+								<span class="indicator-label">Войти</span>
+								<span class="indicator-progress">Пожалуйста подождите...
+									<span class="spinner-border spinner-border-sm align-middle ms-2"></span>
+								</span>
+							</button>
+
+
+							<a href="<?= config('app.domain') ?>/auth/create" class="btn btn-flex flex-center btn-light btn-lg w-100 mb-5">Регистрация</a>
+
+						</div>
+					</form>
+				</div>
+			</div>
+			<!--end::Content-->
+			<!--begin::Footer-->
+			<div class="d-flex flex-center flex-column-auto p-10">
+				<!--begin::Links-->
+				<div class="d-flex align-items-center fw-bold fs-6">
+					<a href="https://www.rootx.ru" class="text-muted text-hover-primary px-2">О нас</a>
+					<a href="https://vk.me/localzet.projects" class="text-muted text-hover-primary px-2">Поддержка</a>
+					<a href="https://github.com/rootx-group" class="text-muted text-hover-primary px-2">GitHub</a>
+				</div>
+				<!--end::Links-->
+			</div>
+			<!--end::Footer-->
+		</div>
+		<!--end::Authentication - Sign-in-->
+	</div>
+	<!--end::Root-->
+	<!--end::Main-->
+	<!--begin::Javascript-->
+	<script>
+		var hostUrl = "<?= config('app.assets') ?>/";
+	</script>
+	<!--begin::Global Javascript Bundle(used by all pages)-->
+	<script src="<?= config('app.assets') ?>/plugins/global/plugins.bundle.js"></script>
+	<script src="<?= config('app.assets') ?>/js/scripts.bundle.js"></script>
+	<!--end::Global Javascript Bundle-->
+	<!--begin::Page Custom Javascript(used by this page)-->
+	<script src="<?= config('app.assets') ?>/js/custom/authentication/sign-in/general.js"></script>
+	<!--end::Page Custom Javascript-->
+	<!--end::Javascript-->
+</body>
