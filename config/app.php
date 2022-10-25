@@ -29,8 +29,8 @@ return [
     'oauth_server' => 'https://t-uni.ru/app/oauth/',
     'oauth_params' => '?tokenback=http%3A%2F%2Flocalhost%3A88%2F',
 
-    'domain' => 'https://rx.localzet.ru',
-    'assets' => 'https://rx.localzet.ru/assets',
+    'domain' => 'http://localhost:882',
+    'assets' => 'http://localhost:882/assets',
     'fonts' => 'https://src.localzet.ru/fonts',
 
     'logo' => '/1.svg',
